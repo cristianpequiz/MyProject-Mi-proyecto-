@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <br>
+        
+        <form th:action="@{/salvarEmpleado}" method="post" th:object="${empleado}">
+            
+            <input type="hidden" name="id_empleado" id="id_empleado" th:field="*{id_empleado}"/>
+            
+            <label for="departamento">Departamento</label>
+            <input type="number" name="departamento" id="departamento" th:field="*{departamento}">
+            
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" th:field="*{nombre}"/>
+            
+            <label for="edad">Edad</label>
+            <input type="number" name="edad" id="edad" th:field="*{edad}"/>
+            
+            <label for="telefono">Telefono</label>
+            <input type="number" name="telefono" id="telefono" th:field="*{telefono}"/>
+            
+            <input type="submit" name="salvarEmpleado" value="Salvar" />
+        </form>            
+        
+    </body>
+</html>

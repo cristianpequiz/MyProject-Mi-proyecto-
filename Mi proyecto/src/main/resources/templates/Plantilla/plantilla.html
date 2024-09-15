@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../static/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:fragment="encabezado"> <h1>[[#{pagina.encabezado}]]</h1></header>
+        
+        <footer th:fragment="piepagina">
+            <div>
+            </br>
+            <a th:href="@{/(lang=es)}">ES</a>-    
+            <a th:href="@{/(lang=en)}">EN</a>-   
+            <span>  [[#{pagina.pie-de-pagina}]] <a href="http://www.bdc.com.mx" target="_blank">BrainDataCenter.com.mx</a></span>
+            </div>
+           
+            
+        </footer>
+    </body>
+</html>

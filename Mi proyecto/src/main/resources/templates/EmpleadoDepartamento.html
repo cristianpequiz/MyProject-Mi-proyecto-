@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <a th:href="@{/volverAMenu}">Volver</a>
+        
+        <br>
+        
+        <header th:include="Plantilla/plantilla :: encabezado"></header>
+        <table border="2">
+            <tr>
+                <th>[[#{empleado.id}]]</th>
+                <th>[[#{empleado.nombre}]]</th>
+                <th>[[#{empleado.edad}]]</th>
+                <th>[[#{empleado.telefono}]]</th>
+                <th>[[#{empleado.borrar}]]</th>
+            </tr>
+            <tr th:each="empleado:${mostrarEmpleados}">
+                <td th:text="${empleado.id_empleado}">Muestra el id del empleado</td>
+                <td th:text="${empleado.nombre}">Muestra el nombre del empleado</td>
+                <td th:text="${empleado.edad}">Muestra la edad del empleado</td>
+                <td th:text="${empleado.telefono}">Muestra el telefono</td>
+                <td> <a  th:href="@{/borrarEmpleado(id_empleado = ${empleado.id_empleado})}" />[[#{empleado.borrar}]]</td>
+            </tr>
+        </table>
+        
+        <br>
+   
+    </body>
+</html>
+

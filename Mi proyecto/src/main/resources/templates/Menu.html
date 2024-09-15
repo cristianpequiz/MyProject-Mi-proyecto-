@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:replace="Plantilla/plantilla :: encabezado"></header>
+        
+        
+        <table border="2"> 
+            <tr>
+                <th>[[#{pagina.titulo}]]</th>
+                <th></th>
+            </tr>
+            <tr th:each="departamento:${mostrarDepartamentos}">
+                
+                <td th:text="${departamento.nombre}">Muestra el nombre</td>
+                <td> <a th:href="@{/empleados/} + ${departamento.id_departamento}"> [[#{pagina.empleados}]]</a> </td>
+    
+            </tr>
+        </table>
+        
+        <a th:href="@{/agregarEmpleado}">Agregar Empleado</a>
+        
+        <footer th:replace="Plantilla/plantilla :: piepagina"></footer>
+                
+    </body>
+</html>
