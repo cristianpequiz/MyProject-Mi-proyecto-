@@ -28,5 +28,15 @@ public class DepartamentoServicioImp implements DepartamentoServicio{
     public Departamento localizarDepartamento(Long id_departamento) {
         return departamentoDao.findById(id_departamento).orElse(null);
     }
+
+    @Override
+    public void guardarDepartamento(Departamento departamento) {
+        departamentoDao.save(departamento);
+    }
+
+    @Override
+    public void borrarDepartamento(Departamento departamento) {
+        departamentoDao.delete(departamento);
+    }
     
 }

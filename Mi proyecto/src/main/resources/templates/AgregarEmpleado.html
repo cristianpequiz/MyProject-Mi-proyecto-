@@ -8,26 +8,34 @@
     </head>
     <body>
         
-        <br>
-        
         <form th:action="@{/salvarEmpleado}" method="post" th:object="${empleado}">
             
-            <input type="hidden" name="id_empleado" id="id_empleado" th:field="*{id_empleado}"/>
+            <label for="departamento">Seleccione el departamento:</label>
+            <select id="departamento" name="departamento" th:field="*{departamento}">
+                <option th:each="departamento : ${departamentos}" th:value="${departamento.id_departamento}" th:text="${#strings.capitalize(departamento.nombre)}" ></option>
+            </select>
             
-            <label for="departamento">Departamento</label>
-            <input type="number" name="departamento" id="departamento" th:field="*{departamento}">
+            <br>
             
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre" th:field="*{nombre}"/>
             
+            <br>
+            
             <label for="edad">Edad</label>
             <input type="number" name="edad" id="edad" th:field="*{edad}"/>
+            
+            <br>
             
             <label for="telefono">Telefono</label>
             <input type="number" name="telefono" id="telefono" th:field="*{telefono}"/>
             
+            <br>
+            
             <input type="submit" name="salvarEmpleado" value="Salvar" />
         </form>            
+        
+        <a th:href="@{/volver}">Volver al menu</a>
         
     </body>
 </html>

@@ -7,11 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        
-        <a th:href="@{/volverAMenu}">Volver</a>
-        
-        <br>
-        
+    
         <header th:include="Plantilla/plantilla :: encabezado"></header>
         <table border="2">
             <tr>
@@ -26,11 +22,13 @@
                 <td th:text="${empleado.nombre}">Muestra el nombre del empleado</td>
                 <td th:text="${empleado.edad}">Muestra la edad del empleado</td>
                 <td th:text="${empleado.telefono}">Muestra el telefono</td>
-                <td> <a  th:href="@{/borrarEmpleado(id_empleado = ${empleado.id_empleado})}" />[[#{empleado.borrar}]]</td>
+                <td> <a th:href="@{/borrarEmpleado(id_empleado = ${empleado.id_empleado})}" />[[#{empleado.borrar}]]</td>
             </tr>
         </table>
         
         <br>
+        
+        <a th:href="@{/volver}">Volver al menu</a>
    
     </body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <form th:action="@{/salvarDepartamento}" method="post" th:object="${departamento}">
+            
+            <input type="hidden" name="id_departamento" id="id_departamento" th:field="*{id_departamento}" />
+            
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" th:field="*{nombre}" />
+            
+            <input type="submit" name="salvarDepartamento" Value="Salvar" />
+            
+        </form>
+        
+        <a th:href="@{/volver}">Volver al menu</a>
+        
+    </body>
+</html>

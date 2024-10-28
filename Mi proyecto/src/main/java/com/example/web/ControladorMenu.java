@@ -53,9 +53,36 @@ public class ControladorMenu {
         
     //Metodo que maneja la solicitud "/agregarEmpleado" para que esta se redireccione al archivo html AgregarEmpleado
     @GetMapping("/agregarEmpleado")
-    public String agregarEmpleado(Empleado empleado){
+    public String agregarEmpleado(Empleado empleado, Model model){
+        
+        List<Departamento> departamentos = departamentoServicio.mostrarDepartamentos();
+        
+        model.addAttribute("departamentos",departamentos);
         
     return "AgregarEmpleado";
+    }
+    
+    //Metodo que maneja la solicitud "/agregarDepartamento" para que esta se redireccione al archivo html AgregarDepartamento
+    @GetMapping("/agregarDepartamento")
+    
+    public String agregarDepartamento(Departamento departamento){
+        
+    return "AgregarDepartamento";
+    }
+    
+    //Para manejar la solicitud que se encuentra en ambos archivos html (AgregarDepartamento y AgregarEmpleado)
+    @GetMapping("/volver")
+    public String volver(){
+    return "redirect:/";
+    }
+    
+    //Metodo para borrar un departamento de la base de datos
+    @GetMapping("/borrarDepartamento")
+    public String borrarDepartamento(Departamento departamento){
+        
+        departamentoServicio.borrarDepartamento(departamento);
+        
+    return "redirect:/";
     }
     
 }

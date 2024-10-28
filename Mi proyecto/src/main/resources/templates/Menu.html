@@ -14,16 +14,22 @@
             <tr>
                 <th>[[#{pagina.titulo}]]</th>
                 <th></th>
+                <th>Borrar</th>
             </tr>
             <tr th:each="departamento:${mostrarDepartamentos}">
                 
                 <td th:text="${departamento.nombre}">Muestra el nombre</td>
                 <td> <a th:href="@{/empleados/} + ${departamento.id_departamento}"> [[#{pagina.empleados}]]</a> </td>
+                <td> <a th:href="@{/borrarDepartamento(id_departamento=${departamento.id_departamento})}">Borrar</a> </td>
     
             </tr>
         </table>
         
         <a th:href="@{/agregarEmpleado}">Agregar Empleado</a>
+        
+        <br>
+        
+        <a th:href="@{/agregarDepartamento}">Agregar Departamento</a>
         
         <footer th:replace="Plantilla/plantilla :: piepagina"></footer>
                 
