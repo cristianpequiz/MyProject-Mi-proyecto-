@@ -29,11 +29,13 @@ public class DepartamentoServicioImp implements DepartamentoServicio{
         return departamentoDao.findById(id_departamento).orElse(null);
     }
 
+    //Metodo para guardar departamento
     @Override
     public void guardarDepartamento(Departamento departamento) {
         departamentoDao.save(departamento);
     }
 
+    //Metodo para borrar departamento
     @Override
     public void borrarDepartamento(Departamento departamento) {
         departamentoDao.delete(departamento);

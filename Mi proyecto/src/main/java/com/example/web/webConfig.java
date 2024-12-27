@@ -10,6 +10,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+
+//Para cambiar el lenguaje de la aplicación
 @Configuration
 public class webConfig implements WebMvcConfigurer {
    

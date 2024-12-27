@@ -14,6 +14,7 @@ public interface EmpleadoServicio {
     //Metodo para guardar un empleado a la base de datos
     public Empleado guardarEmpleado(Empleado empleado);
     
+    //Metodo para borrar empleado
     public void borrarEmpleado(Empleado empleado);
     
 }

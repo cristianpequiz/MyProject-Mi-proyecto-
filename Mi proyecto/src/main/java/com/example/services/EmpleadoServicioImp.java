@@ -31,7 +31,8 @@ public class EmpleadoServicioImp implements EmpleadoServicio{
     public Empleado guardarEmpleado(Empleado empleado) {
         return empleadoDao.save(empleado);
     }
-
+    
+    //Metodo para borrar empleado
     @Override
     public void borrarEmpleado(Empleado empleado) {
         empleadoDao.delete(empleado);
